@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #eee;
+    font-family: Arial, sans-serif;
+    max-width: 82%;
+    /* Creates a 15px gap at the top and bottom and centers the items */
+    margin: 15px auto;
+    line-height: 1.5em;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(38, 38, 44);
+    text-align: center;
+}
+
+.header{
+    color: white;
+    /* Top Left Bottom Right */
+    padding: 10px 0 5px 0;
+}
+
+.navbar ul{
+    display: flex;
+    /* Removes the bullets */
+    list-style-type: none;
+    gap: 35px;
+    flex-direction: row;
+    justify-content: center;
+    /* Removes the padding allowing for the navbar to be centered */
+    padding: 0;
+}
+
+/* Makes the links the same as the heading above since both inherit the color from the header class */
+.navbar > ul > li > a{
+    color: unset;
+    text-decoration: unset;
+}
+
+.navbar > ul > li > a:hover{
+    color: rgba(255, 255, 255, 0.448);
+}
+
+.posts{
+    background-color: #eee;
+    padding: 20px 0;
+}
+
+button{
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    padding: 0.5em 1em;
+    margin-bottom: 20px;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+}
+
+.bg-white{
+    background-color: white;
+}
+
+.featured-post{
+    display: flex;
+}
+
+.featured-post-info{
+    text-align: left;
+}
+
+.featured-post-info > p{
+    padding: 2% 0;
+}
+
+img{
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.posts-flexbox{
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.post{
+    justify-content: space-around;
+    aspect-ratio: 2/1;
+    border-radius: 10px;
+}
+.post > h3{
+    /* Just needed the font size to be larger than what it was */
+    font-size: larger;
+    margin: 2em 0 0 0;
+}
+.post > p{
+    padding: 0 2em;
+}
+.footer{
+    color: white;
+    padding: 1.5em;
+}
+@media screen and (max-width: 768px) {
+    body{
+        /* removes max-width */
+        max-width: none;
+    }
+    .posts-flexbox{
+        flex-direction: column;
+    }
+    .featured-post{
+        flex-direction: column;
+        align-items: center;
+    }
+    .featured-post-info{
+        text-align: center;
+    }
+    .post{
+        /* Sets the property to either it's initial value or it's inherited value */
+        aspect-ratio: unset;
+    }
+    .featured-post{
+        padding-bottom: 20px;
+    }
+    .post{
+        padding-bottom: 20px;
+    }
+}
